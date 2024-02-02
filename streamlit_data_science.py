@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1mrKrABap7s0bFjrg9KVSSs9_JszYZa61
 """
 
-!pip install xgboost
+#!pip install xgboost
 
 import streamlit as st
 import numpy as np
