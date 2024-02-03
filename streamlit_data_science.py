@@ -51,17 +51,12 @@ apartment_type_dict = {'One room apartment': 1,
                          'Multi-room apartment': 6}
 
 features_cols = ['apartment type', 'square meters', 'construction year', 'floor number',
-       'district_Belomorski', 'district_Central', 'district_Gagarin',
-       'district_Hristo Smirnenski', 'district_Judicial',
-       'district_Kamenitza 1', 'district_Kamenitza 2', 'district_Komatevo',
-       'district_Kurshiyaka', 'district_Marasha', 'district_Ostromila',
-       'district_Proslav', 'district_Southern', 'district_Sunrise',
-       'district_Thrace', 'district_Western', 'district_Youth hill',
-       'construction type_ Panel', 'construction type_Bricks',
-       'construction type_Formwork', 'construction type_Joist', 'floor_Attic',
-       'floor_Basement', 'floor_First', 'floor_Ground floor', 'floor_Last',
-       'floor_Not last', 'floor_Unknown', 'level of completion_In a project',
-       'level of completion_In construction', 'level of completion_Unknown']
+       'Belomorski', 'Central', 'Gagarin', 'Hristo Smirnenski', 'Judicial',
+       'Kamenitza 1', 'Kamenitza 2', 'Komatevo', 'Kurshiyaka', 'Marasha',
+       'Ostromila', 'Proslav', 'Southern', 'Sunrise', 'Thrace', 'Western',
+       'Youth hill', ' Panel', 'Bricks', 'Formwork', 'Joist', 'Attic',
+       'Basement', 'First', 'Ground floor', 'Last', 'Not last', 'Unknown',
+       'In a project', 'In construction', 'Not specified']
 
 features = pd.DataFrame(columns = features_cols)
 
@@ -73,16 +68,17 @@ st.title("Real Estate Price Prediction App")
 
 # Input for numerical features
 
-square_meters = st.number_input("Enter Numerical Feature 2:", min_value=10, max_value=600)
+apartment_type = st.number_input("Enter Numerical Feature 1:", min_value=1)
+square_meters = st.number_input("Enter Numerical Feature 2:", min_value=20)
 construction_year = st.number_input("Enter Numerical Feature 3:", min_value=1886)
-floor_number = st.number_input("Enter Numerical Feature 3:", min_value=1, max_value=19)
+floor_number = st.number_input("Enter Numerical Feature 3:", min_value=1)
 
 # Dropdowns for categorical features
-apartment_type = st.selectbox("Select Apartment type:", np.array(list(apartment_type_dict.keys())))
-district = st.selectbox('Select district:', features.columns[features.columns.str.contains("district")].values)
-construction_type = st.selectbox('Select Construction type:', features.columns[features.columns.str.contains("construction type")].values)
-floor = st.selectbox('Select Floor type:', features.columns[features.columns.str.contains("floor")].values)
-level_of_completion = st.selectbox('Select Level of completion:', features.columns[features.columns.str.contains("level of completion")].values)
+
+district = st.selectbox('Select district:', features.columns[4:21].values)
+construction_type = st.selectbox('Select Construction type:', features.columns[21:25].values)
+floor = st.selectbox('Select Floor type:', features.columns[25:32].values)
+level_of_completion = st.selectbox('Select Level of completion:', features.columns[32:].values)
 
 
 if st.button("Predict Price"):
