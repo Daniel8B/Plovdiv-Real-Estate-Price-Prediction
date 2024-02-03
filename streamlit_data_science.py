@@ -63,9 +63,6 @@ features = pd.DataFrame(columns = features_cols)
 # Streamlit UI
 st.title("Real Estate Price Prediction App")
 
-# Streamlit UI
-st.title("Real Estate Price Prediction App")
-
 # Input for numerical features
 
 square_meters = st.number_input("Enter Square meters:", min_value=10, max_value=600)
