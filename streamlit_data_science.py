@@ -44,7 +44,7 @@ def predict_price(apartment_type, square_meters, construction_year,
 
     return prediction
 
-features = ['apartment type', 'square meters', 'construction year', 'floor number',
+features_cols = ['apartment type', 'square meters', 'construction year', 'floor number',
        'district_Belomorski', 'district_Central', 'district_Gagarin',
        'district_Hristo Smirnenski', 'district_Judicial',
        'district_Kamenitza 1', 'district_Kamenitza 2', 'district_Komatevo',
@@ -56,6 +56,8 @@ features = ['apartment type', 'square meters', 'construction year', 'floor numbe
        'floor_Basement', 'floor_First', 'floor_Ground floor', 'floor_Last',
        'floor_Not last', 'floor_Unknown', 'level of completion_In a project',
        'level of completion_In construction', 'level of completion_Unknown']
+
+features = pd.DataFrame(columns = features_cols)
 
 # Streamlit UI
 st.title("Real Estate Price Prediction App")
