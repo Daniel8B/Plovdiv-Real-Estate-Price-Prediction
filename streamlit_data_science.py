@@ -63,10 +63,10 @@ features = pd.DataFrame(columns = features_cols)
 st.title("Real Estate Price Prediction App")
 
 # Input for numerical features
-apartment_type = st.number_input("Enter Numerical Feature 1:", min_value=1)
-square_meters = st.number_input("Enter Numerical Feature 2:", min_value=20)
-construction_year = st.number_input("Enter Numerical Feature 3:", min_value=1886)
-floor_number = st.number_input("Enter Numerical Feature 3:", min_value=1)
+# apartment_type = st.number_input("Enter Numerical Feature 1:", min_value=1)
+# square_meters = st.number_input("Enter Numerical Feature 2:", min_value=20)
+# construction_year = st.number_input("Enter Numerical Feature 3:", min_value=1886)
+# floor_number = st.number_input("Enter Numerical Feature 3:", min_value=1)
 # Dropdowns for categorical features
 # district = st.selectbox('Select district:', features.columns[features.columns.str.contains("district")].values)
 # construction_type = st.selectbox('Select Construction type:', features.columns[features.columns.str.contains("construction type")].values)
