@@ -62,6 +62,20 @@ features = pd.DataFrame(columns = features_cols)
 # Streamlit UI
 st.title("Real Estate Price Prediction App")
 
+# Streamlit UI
+st.title("Real Estate Price Prediction App")
+
+# Input for numerical features
+apartment_type = st.number_input("Enter Numerical Feature 1:", min_value=1)
+square_meters = st.number_input("Enter Numerical Feature 2:", min_value=20)
+construction_year = st.number_input("Enter Numerical Feature 3:", min_value=1886)
+floor_number = st.number_input("Enter Numerical Feature 3:", min_value=1)
+# Dropdowns for categorical features
+district = st.selectbox('Select district:', features.columns[features.columns.str.contains("district")].values)
+construction_type = st.selectbox('Select Construction type:', features.columns[features.columns.str.contains("construction type")].values)
+floor = st.selectbox('Select Floor type:', features.columns[features.columns.str.contains("floor")].values)
+level_of_completion = st.selectbox('Select Level of completion:', features.columns[features.columns.str.contains("level of completion")].values)
+
 
 if st.button("Predict Price"):
     predicted_price = predict_price(apartment_type, square_meters, construction_year,
