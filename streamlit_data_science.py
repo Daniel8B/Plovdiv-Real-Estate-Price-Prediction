@@ -71,6 +71,7 @@ floor_number = st.number_input("Enter Floor number:", min_value=1, max_value=19)
 
 # Dropdowns for categorical features
 
+apartment_type = st.selectbox('Select Apartment type:', np.array(list(apartment_type_dict.keys())))
 district = st.selectbox('Select District:', features.columns[4:21].values)
 construction_type = st.selectbox('Select Construction type:', features.columns[21:25].values)
 floor = st.selectbox('Select Floor type:', features.columns[25:32].values)
