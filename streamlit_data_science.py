@@ -68,14 +68,13 @@ st.title("Real Estate Price Prediction App")
 
 # Input for numerical features
 
-apartment_type = st.number_input("Enter Numerical Feature 1:", min_value=1)
-square_meters = st.number_input("Enter Numerical Feature 2:", min_value=20)
-construction_year = st.number_input("Enter Numerical Feature 3:", min_value=1886)
-floor_number = st.number_input("Enter Numerical Feature 3:", min_value=1)
+square_meters = st.number_input("Enter Square meters:", min_value=10, max_value=600)
+construction_year = st.number_input("Enter Construction year:", min_value=1886)
+floor_number = st.number_input("Enter Floor number:", min_value=1, max_value=19)
 
 # Dropdowns for categorical features
 
-district = st.selectbox('Select district:', features.columns[4:21].values)
+district = st.selectbox('Select District:', features.columns[4:21].values)
 construction_type = st.selectbox('Select Construction type:', features.columns[21:25].values)
 floor = st.selectbox('Select Floor type:', features.columns[25:32].values)
 level_of_completion = st.selectbox('Select Level of completion:', features.columns[32:].values)
