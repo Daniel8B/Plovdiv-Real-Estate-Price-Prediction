@@ -61,7 +61,7 @@ features_cols = ['apartment type', 'square meters', 'construction year', 'floor 
 features = pd.DataFrame(columns = features_cols)
 
 # Streamlit UI
-st.title("Real Estate Price Prediction App")
+st.title("Plovdiv Real Estate Price Prediction App")
 
 # Input for numerical features
 
@@ -81,4 +81,4 @@ if st.button("Predict Price"):
     predicted_price = predict_price(apartment_type, square_meters, construction_year,
                                     floor_number, district, construction_type, floor, level_of_completion)
 
-    st.success(f"Predicted Price: ${predicted_price:,.2f}")
+    st.success(f"Predicted Price: €{predicted_price:,.2f}")
