@@ -13,7 +13,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
-import xgboost as xg
+from xgboost import XGBRegressor
 
 load_model = pickle.load(open('pld_estate_prediction_model.pkl', 'rb'))
 
