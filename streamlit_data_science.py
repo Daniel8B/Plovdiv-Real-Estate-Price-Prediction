@@ -29,7 +29,7 @@ def predict_price(apartment_type, square_meters, construction_year,
     floor_index = np.where(features.columns == floor)[0][0]
     completion_index = np.where(features.columns == level_of_completion)[0][0]
 
-    input_data[0] = apartment_type
+    input_data[0] = apartment_type_dict[apartment_type]
     input_data[1] = square_meters
     input_data[2] = construction_year
     input_data[3] = floor_number
@@ -43,6 +43,12 @@ def predict_price(apartment_type, square_meters, construction_year,
     prediction = load_model.predict([input_data])[0]
 
     return prediction
+apartment_type_dict = {'One room apartment': 1,
+                         'Studio': 2,
+                         'Two-room apartment': 3,
+                         'Three-room apartment': 4,
+                         'Маisonette': 5,
+                         'Multi-room apartment': 6}
 
 features_cols = ['apartment type', 'square meters', 'construction year', 'floor number',
        'district_Belomorski', 'district_Central', 'district_Gagarin',
@@ -66,11 +72,13 @@ st.title("Real Estate Price Prediction App")
 st.title("Real Estate Price Prediction App")
 
 # Input for numerical features
-apartment_type = st.number_input("Enter Numerical Feature 1:", min_value=1)
-square_meters = st.number_input("Enter Numerical Feature 2:", min_value=20)
+
+square_meters = st.number_input("Enter Numerical Feature 2:", min_value=10, max_value=600)
 construction_year = st.number_input("Enter Numerical Feature 3:", min_value=1886)
-floor_number = st.number_input("Enter Numerical Feature 3:", min_value=1)
+floor_number = st.number_input("Enter Numerical Feature 3:", min_value=1, max_value=19)
+
 # Dropdowns for categorical features
+apartment_type = st.selectbox("Select Apartment type:", np.array(list(apartment_type_dict.keys())))
 district = st.selectbox('Select district:', features.columns[features.columns.str.contains("district")].values)
 construction_type = st.selectbox('Select Construction type:', features.columns[features.columns.str.contains("construction type")].values)
 floor = st.selectbox('Select Floor type:', features.columns[features.columns.str.contains("floor")].values)
