@@ -61,7 +61,8 @@ features_cols = ['apartment type', 'square meters', 'construction year', 'floor 
 features = pd.DataFrame(columns = features_cols)
 
 # Streamlit UI
-st.title("Plovdiv Real Estate\nPrice Prediction App")
+st.title("Plovdiv Real Estate")
+st.title("Price Prediction App")
 
 # Input for numerical features
 
