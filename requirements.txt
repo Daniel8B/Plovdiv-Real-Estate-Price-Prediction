@@ -3,3 +3,6 @@ pandas==1.5.3
 numpy==1.23.5
 xgboost==2.0.3
 numba==0.58.1
+matplotlib==3.8.2
+yfinance==0.2.36
+seaborn==0.13.1
