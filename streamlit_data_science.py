@@ -64,8 +64,7 @@ features = pd.DataFrame(columns = features_cols)
 st.header("Plovdiv Real Estate")
 st.header("Price Prediction App", divider="gray")
 
-st.text("\nThe model for this app was trained on real estate data from www.alo.bg\ 
-        \nIn order to make a prediction you need to input 8 parameters.")
+st.text("\nThe model for this app was trained on real estate data from www.alo.bg\nIn order to make a prediction you need to input 8 parameters.")
 
 # Input for numerical features
 
