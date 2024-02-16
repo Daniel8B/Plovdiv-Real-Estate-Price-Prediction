@@ -61,12 +61,12 @@ features_cols = ['apartment type', 'square meters', 'construction year', 'floor 
 features = pd.DataFrame(columns = features_cols)
 
 # Streamlit UI
-st.header("Plovdiv Real Estate")
+st.header("Plovdiv Apartments")
 st.header("Price Prediction App", divider="gray")
 
-st.text("\nThe model for this app was trained on real estate data from www.alo.bg"
+st.text("\nThe model for this app was trained on real estate data for apartments only from www.alo.bg"
         "\nIn order to make a prediction you need to input 8 parameters\n"
-        "(the values of the numeric parameters should be inclusively\nbetween the min/max brackets showed in brackets):\n"
+        "(the values of the numeric parameters should be inclusively\nbetween the min/max values showed in brackets):\n"
         "\n-Square meters (min:10, max=200)\n-Construction year (min: 1886, max=2027)"
         "\n-Floor number (min=1, max=19)\n-Apartment type\n-District\n-Construction type\n-Floor type\n-Level of completion")
 
@@ -90,3 +90,13 @@ if st.button("Predict Price"):
                                     floor_number, district, construction_type, floor, level_of_completion)
 
     st.success(f"Predicted Price: €{predicted_price:,.2f}")
+
+st.text("The Root Mean Squared Error on the test set is €11,828."
+       "\nHowever there might be big predictive deviations due to the nature of the scraped data."
+       "\nThe real estate data doesn't contain parameters like furnishing, number of bathrooms,"
+       "\nunit type(e.g. residential building, house or hotel apartment, etc.)"
+       "\nAlso, there are only 'In project' and 'In construction' level of completion types"
+       "\nso we have to mark all other buildings with completion type 'Not specified'"
+       "\nwhich adds further to the model's error."
+       "\nThese are some of the few factors that affect the app's performance"
+       "\nbut regardless, you can get a very good price estimate of an apartment in Plovdiv.")
