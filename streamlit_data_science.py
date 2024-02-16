@@ -65,12 +65,14 @@ st.header("Plovdiv Real Estate")
 st.header("Price Prediction App", divider="gray")
 
 st.text("\nThe model for this app was trained on real estate data from www.alo.bg"
-        "\nIn order to make a prediction you need to input 8 parameters.")
+        "\nIn order to make a prediction you need to input 8 parameters (the values of the numeric parameters should be inclusively between the min/max brackets showed in brackets):"
+        "\n-Square meters (min:10, max=200)\nConstruction year (min: 1886, max=2027"
+        "\nFloor number (min=1, max=19)\nApartment type\nDistrict\nConstruction type\Floor type\Level of completion")
 
 # Input for numerical features
 
 square_meters = st.number_input("Enter Square meters:", min_value=10, max_value=600)
-construction_year = st.number_input("Enter Construction year:", min_value=1886)
+construction_year = st.number_input("Enter Construction year:", min_value=1886, max_value=2027)
 floor_number = st.number_input("Enter Floor number:", min_value=1, max_value=19)
 
 # Dropdowns for categorical features
