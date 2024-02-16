@@ -65,9 +65,9 @@ st.header("Plovdiv Real Estate")
 st.header("Price Prediction App", divider="gray")
 
 st.text("\nThe model for this app was trained on real estate data from www.alo.bg"
-        "\nIn order to make a prediction you need to input 8 parameters (the values of the numeric parameters should be inclusively between the min/max brackets showed in brackets):"
-        "\n-Square meters (min:10, max=200)\nConstruction year (min: 1886, max=2027"
-        "\nFloor number (min=1, max=19)\nApartment type\nDistrict\nConstruction type\Floor type\Level of completion")
+        "\nIn order to make a prediction you need to input 8 parameters\n(the values of the numeric parameters should be inclusively between the min/max brackets showed in brackets):"
+        "\n-Square meters (min:10, max=200)\n-Construction year (min: 1886, max=2027"
+        "\n-Floor number (min=1, max=19)\n-Apartment type\n-District\n-Construction type\n-Floor type\n-Level of completion")
 
 # Input for numerical features
 
